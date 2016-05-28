@@ -94,7 +94,7 @@ static void announce_and_cleanup(void)
 	cleanup_before_linux();
 }
 
-#define CONFIG_OF_LIBFDT
+//#define CONFIG_OF_LIBFDT
 int do_bootm_linux(int flag, int argc, char *argv[], bootm_headers_t *images)
 {
 	bd_t	*bd = gd->bd;
@@ -122,12 +122,12 @@ int do_bootm_linux(int flag, int argc, char *argv[], bootm_headers_t *images)
 
 	show_boot_progress (15);
 
-#ifdef CONFIG_OF_LIBFDT
+//#ifdef CONFIG_OF_LIBFDT
 	if (images->ft_len){
 		printf("Boot with dtb\n");
 		return bootm_linux_fdt(machid, images);
 	}
-#endif
+//#endif
 
 	printf("Boot with atags\n");
 	kernel_entry = (void (*)(int, int, uint))images->ep;

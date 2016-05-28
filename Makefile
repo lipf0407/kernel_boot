@@ -157,7 +157,8 @@ export	ARCH CPU BOARD VENDOR SOC
 
 # set default to nothing for native builds
 ARCH=arm
-CROSS_COMPILE ?= $(TOPDIR)/../prebuilts/gcc/linux-x86/arm/arm-2009q3/bin/arm-none-linux-gnueabi-
+#CROSS_COMPILE ?= $(TOPDIR)/../prebuilts/gcc/linux-x86/arm/arm-2009q3/bin/arm-none-linux-gnueabi-
+CROSS_COMPILE ?= /home/lpf/and/android-4.4/prebuilts/gcc/linux-x86/arm/arm-2009q3/bin/arm-none-linux-gnueabi-
 # load other configuration
 include $(TOPDIR)/config.mk
 
