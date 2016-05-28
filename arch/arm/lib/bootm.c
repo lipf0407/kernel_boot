@@ -94,6 +94,7 @@ static void announce_and_cleanup(void)
 	cleanup_before_linux();
 }
 
+#define CONFIG_OF_LIBFDT
 int do_bootm_linux(int flag, int argc, char *argv[], bootm_headers_t *images)
 {
 	bd_t	*bd = gd->bd;
@@ -221,6 +222,7 @@ static int bootm_linux_fdt(int machid, bootm_headers_t *images)
 
 	announce_and_cleanup();
 
+	printf("kernel_entry\n");
 	kernel_entry(0, machid, *of_flat_tree);
 	/* does not return */
 
